@@ -34,7 +34,7 @@ def predict(model_name):
         
         model = models[model_name]
         prediction = model.predict([input_data][0])[0]
-        result = "You will be not be placed" if prediction == 0 else "You will be placed "
+        result = "Sorry. You will be not be placed" if prediction == 0 else "You will be placed "
         return render_template('model.html', model_name=model_name, prediction=result)
     
     return render_template('model.html', model_name=model_name)
